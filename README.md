@@ -17,7 +17,7 @@ In version 1G, I added the functions N200, N201, N202 and N203 to complete the d
 
 The function NXXX cahnged name in version 1H to NX for saving two key strokes :-) I added the N? to query address 4100 (it shows the current NoV config). The function NBS (NoV Block Switch) was added to be able to switch to a new config and restore Main Memory to a file named “N” in the new RAM block in one function. NBS is a prompting function that only accepts input in the ranges 000-003, 100-103 and 200-203. An input outside these ranges results in “DATA ERROR”. If the file “N” or the function HGETA are not found, a “NONEXISTENCE” is displayed. If you switch the ROM block (first of the three digits prompted for), the message “CALC OFF” is briefly displayed to remind you that you need to turn the calc off and on to complete the ROM block switch.
 
-Feel free to use the ICEBOX1H.ROM or tweak it’s source (GPLv3 license). The User Manual should contain what you need to make use of the module.
+Feel free to use the ICEBOX1H.ROM or tweak it’s source. The User Manual should contain what you need to make use of the module.
 
 The ICEBOX uses XROM number 4. If this conflicts with another rom you use, you may use alternative ICEBOX roms with XROM #20 or #16.
 
@@ -28,8 +28,6 @@ With the programs “SAVENOV” and “GETNOV”, you can now very easily save a
 The scenario: You are a blissful owner of a NoVRAM, NoV-32 or NoV-64 module by Diego Diaz. You have loaded into the module’s ROM the companion module (the ICEBOX) and the excellent CCD OS/X (or another rom with the SAVEROM and GETROM functions). You want an easy way to back up the entire HEPAX RAM to a mass storage device (cassette drive, HP-IL disc drive, RS-232 or PIL-Box connected to a PC). Manually, this is a tedious task, especially with the NoV-64, having 4 blocks of HEPAX RAM with 4 pages of 4K HEPAX RAM each.
 
 With the SAVENOV/GETNOV program in ordinary HP-41 RAM, simply XEQ “SAVENOV” and it will prompt for the type of module you wish to back up (1 for the NoVRAM, 2 for the NoV-32 and 3 for the NoV-64). Upon you pressing the right number and the R/S key, it commences with backing up the whole RAM of the module with files named “N0-8”, “N0-9”, “N0-10”, “N0-11”, “N1-8”, “N1-9″… “N3-11” and shows “NOV SAVED”. The same with retrieving the whole RAM of the module: Prompting for the right module type, copying each page into it’s proper place and ending with “NOV RESTORED” in the display. Simple. For the NoVRAM, the program only saves and restores “N0-8” till “N0-11”, and the NoV-32 includes also the “N1-8” – “N1-11”.
-
-Here is the HP-41 SAVENOV/GETNOV program listing (v. 0.2).
 
 #### MCODE: Using the HP-16C as a tool
 
