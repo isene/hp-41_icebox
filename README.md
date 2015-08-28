@@ -38,3 +38,17 @@ I have always thought of the HP-16C as a special item in my collections. It’s 
 I really love MCODE. With it I can make the HP-41 do just about anything. It’s a nice challenge to do weird stuff on a 30 year old technology.
 
 Some of the challenges in MCODE has to do with calculating jump codes. I used to carry a set of tables to get the right hex words for jumping short distances, for doing calls to the operating system and for the port dependent jumps. No more. The HP-16C comes to the rescue with the MJUMP program.
+
+##### MJUMP
+
+The MJUMP program consists of five parts or programs (references to Ken Emry’s book “MCode for beginners” in square brackets):
+
+**GSB A:** Calculates the right hex word for short distance jumps (forward up to 63 words or backward up to 64 words). Simply enter 0 (for Jump No Carry) or 1 (for Jump Carry) and hit GSB A. The program stops and you enter the address you want to jump to (in HEX), press ENTER and then the address where you are jumping from. Then hit R/S. The result is the correct HEX word to use. [p. 45]
+
+**GSB B:** Same as GSB A except you enter the distance you want to jump: Enter 0 (No Carry) or 1 (Carry), press GSB B. Then enter the jump distance (CHS for negative value) and press R/S. The result is the correct HEX word to use. [p. 45]
+
+**GSB C:** A small routine to determine the class of an instruction (Class 0, 1, 2 or 3). Just enter the word in HEX and press GSB C. The result is the class of the instruction (word).
+
+**GSB D:** Calculates the instructions (two HEX words) for an absolute goto or execute – usually to a mainframe address. Simply enter a 0 for No Carry or a 1 for Carry and press GSB D. Then enter a 0 for XQ (execute) or a 1 for GO (goto) and press R/S. Then enter the address you want to jump to and press R/S. The first HEX word to use is placed in X, the second word is in Y (press RDN to see it). [p. 57]
+
+**GSB E:** Calculates the instructions (three HEX words) for a port dependent jump (a relative XQ or GO). This is always a No Carry jump. Enter a 0 for an execute jump (XQ) or a 1 for a goto jump (GO) and press GSB E. Then enter the address you want to jump to, press ENTER and the address you jump from and press R/S. If both addresses reside within the same “quad” (quarter of a port = 1Kb), you first get the optional three words for a jump to the same quad (and the Carry flag “C” is lit to notify you of this) – then pressing the R/S will give you the three standard port dependent jump words to the destination address. If the source and destination addresses are not in the same quad, you will only get the standard three words to jump to the destination address. The three words are in X, Y and Z registers (the first word is in X). [p. 75]
