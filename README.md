@@ -1,4 +1,10 @@
 # hp-41_icebox
+
+[![HP-41](https://img.shields.io/badge/HP--41-Calculator-orange)](https://en.wikipedia.org/wiki/HP-41C)
+[![License](https://img.shields.io/badge/License-Public%20Domain-brightgreen.svg)](https://unlicense.org/)
+[![GitHub stars](https://img.shields.io/github/stars/isene/hp-41_icebox.svg)](https://github.com/isene/hp-41_icebox/stargazers)
+[![Stay Amazing](https://img.shields.io/badge/Stay-Amazing-blue.svg)](https://isene.org)
+
 ## HP-41: The ICEBOX rom
 
 My passion for low level programming has paid off as I have taken Angell Martin’s Toolbox.rom and started forking it as the ICEBOX.ROM. The first changes was to add two new functions, the RROM and WROM (supplanting the less useful sRG? and X>ST functions). With these, you can read and write directly to HEPAX RAM.
