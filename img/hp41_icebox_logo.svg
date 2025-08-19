@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect x="0" y="0" width="200" height="200" fill="#0c1929"/>
+  
+  <!-- HP-41 Calculator -->
+  <g transform="translate(100, 105)">
+    <!-- Calculator body -->
+    <rect x="-45" y="-55" width="90" height="130" rx="8" fill="#2c2c2c" stroke="#444" stroke-width="2"/>
+    
+    <!-- LCD Display -->
+    <rect x="-40" y="-45" width="80" height="20" rx="3" fill="#0a4d0a" stroke="#333" stroke-width="1"/>
+    <text x="0" y="-32" font-family="monospace" font-size="9" fill="#00ff00" text-anchor="middle">ICEBOX ROM 1H</text>
+    
+    <!-- Low-level operations display -->
+    <rect x="-38" y="-20" width="76" height="35" fill="#1a1a1a" stroke="#333" stroke-width="1" rx="2"/>
+    
+    <!-- ROM operations -->
+    <g font-family="monospace" font-size="5" fill="#00ff00">
+      <text x="-35" y="-12">RROM: READ ROM WORD</text>
+      <text x="-35" y="-6">WROM: WRITE TO HEPAX</text>
+      <text x="-35" y="0">SROM: SEARCH ROM</text>
+      <text x="-35" y="6">>442: CONV TO 442</text>
+      <text x="-35" y="12">RAND: RND GENERATOR</text>
+    </g>
+    
+    <!-- Memory access indicator -->
+    <rect x="-38" y="18" width="76" height="12" fill="#1e40af" stroke="#333" stroke-width="1" rx="1">
+      <animate attributeName="fill" values="#1e40af;#3b82f6;#1e40af" dur="2s" repeatCount="indefinite"/>
+    </rect>
+    <text x="0" y="27" font-family="monospace" font-size="6" fill="#fff" text-anchor="middle">LOW LEVEL ACCESS</text>
+    
+    <!-- Keyboard -->
+    <g fill="#1a1a1a" stroke="#666" stroke-width="0.5">
+      <rect x="-35" y="35" width="12" height="8" rx="1"/>
+      <rect x="-20" y="35" width="12" height="8" rx="1"/>
+      <rect x="-5" y="35" width="12" height="8" rx="1"/>
+      <rect x="10" y="35" width="12" height="8" rx="1"/>
+      <rect x="25" y="35" width="12" height="8" rx="1"/>
+    </g>
+    
+    <!-- Key labels -->
+    <g font-family="monospace" font-size="4" fill="#fff" text-anchor="middle">
+      <text x="-29" y="41">RROM</text>
+      <text x="-14" y="41">WROM</text>
+      <text x="1" y="41">SROM</text>
+      <text x="16" y="41">>442</text>
+      <text x="31" y="41">RAND</text>
+    </g>
+  </g>
+  
+  <!-- ROM/RAM Memory visualization -->
+  <g transform="translate(40, 50)">
+    <text x="0" y="0" font-family="monospace" font-size="8" fill="#fff">ROM Structure</text>
+    
+    <!-- ROM banks with ice crystals -->
+    <g>
+      <!-- ROM bank 1 -->
+      <rect x="0" y="5" width="50" height="10" fill="#0891b2" stroke="#06b6d4" stroke-width="1"/>
+      <text x="25" y="12" font-family="monospace" font-size="4" fill="#fff" text-anchor="middle">BANK 0</text>
+      <!-- Ice crystals -->
+      <path d="M 5,10 L 6,9 L 5,8 L 4,9 Z" fill="#e0f2fe" opacity="0.7"/>
+      <path d="M 45,10 L 46,9 L 45,8 L 44,9 Z" fill="#e0f2fe" opacity="0.7"/>
+      
+      <!-- ROM bank 2 -->
+      <rect x="0" y="18" width="50" height="10" fill="#0891b2" stroke="#06b6d4" stroke-width="1"/>
+      <text x="25" y="25" font-family="monospace" font-size="4" fill="#fff" text-anchor="middle">BANK 1</text>
+      
+      <!-- ROM bank 3 - active -->
+      <rect x="0" y="31" width="50" height="10" fill="#06b6d4" stroke="#22d3ee" stroke-width="2">
+        <animate attributeName="fill" values="#06b6d4;#22d3ee;#06b6d4" dur="3s" repeatCount="indefinite"/>
+      </rect>
+      <text x="25" y="38" font-family="monospace" font-size="4" fill="#fff" text-anchor="middle">BANK 2</text>
+      
+      <!-- ROM bank 4 -->
+      <rect x="0" y="44" width="50" height="10" fill="#0891b2" stroke="#06b6d4" stroke-width="1"/>
+      <text x="25" y="51" font-family="monospace" font-size="4" fill="#fff" text-anchor="middle">BANK 3</text>
+    </g>
+  </g>
+  
+  <!-- HEPAX RAM visualization -->
+  <g transform="translate(130, 50)">
+    <text x="0" y="0" font-family="monospace" font-size="8" fill="#fff">HEPAX RAM</text>
+    
+    <!-- RAM pages -->
+    <g>
+      <rect x="0" y="5" width="50" height="10" fill="#7c3aed" stroke="#8b5cf6" stroke-width="1"/>
+      <text x="25" y="12" font-family="monospace" font-size="4" fill="#fff" text-anchor="middle">PAGE 8</text>
+      
+      <rect x="0" y="18" width="50" height="10" fill="#7c3aed" stroke="#8b5cf6" stroke-width="1"/>
+      <text x="25" y="25" font-family="monospace" font-size="4" fill="#fff" text-anchor="middle">PAGE 9</text>
+      
+      <rect x="0" y="31" width="50" height="10" fill="#8b5cf6" stroke="#a78bfa" stroke-width="2">
+        <animate attributeName="fill" values="#8b5cf6;#a78bfa;#8b5cf6" dur="2s" repeatCount="indefinite"/>
+      </rect>
+      <text x="25" y="38" font-family="monospace" font-size="4" fill="#fff" text-anchor="middle">PAGE A</text>
+      
+      <rect x="0" y="44" width="50" height="10" fill="#7c3aed" stroke="#8b5cf6" stroke-width="1"/>
+      <text x="25" y="51" font-family="monospace" font-size="4" fill="#fff" text-anchor="middle">PAGE B</text>
+    </g>
+  </g>
+  
+  <!-- Binary data flow -->
+  <g transform="translate(90, 110)" opacity="0.7">
+    <!-- Data stream -->
+    <text x="0" y="0" font-family="monospace" font-size="5" fill="#22d3ee">
+      <animate attributeName="x" values="0;-100" dur="5s" repeatCount="indefinite"/>
+      1011 0010 1101 0110 1001 1100 0011 1010
+    </text>
+    <text x="100" y="8" font-family="monospace" font-size="5" fill="#22d3ee">
+      <animate attributeName="x" values="100;0" dur="5s" repeatCount="indefinite"/>
+      0110 1101 0010 1011 1100 1001 1010 0011
+    </text>
+  </g>
+  
+  <!-- Ice crystals decoration -->
+  <g opacity="0.4">
+    <path d="M 30,30 L 35,25 L 30,20 L 25,25 Z M 30,25 L 30,15 M 30,25 L 30,35 M 30,25 L 20,25 M 30,25 L 40,25" 
+          stroke="#bfdbfe" stroke-width="1" fill="none">
+      <animateTransform attributeName="transform" type="rotate" values="0 30 25;360 30 25" dur="20s" repeatCount="indefinite"/>
+    </path>
+    
+    <path d="M 170,40 L 175,35 L 170,30 L 165,35 Z M 170,35 L 170,25 M 170,35 L 170,45 M 170,35 L 160,35 M 170,35 L 180,35" 
+          stroke="#bfdbfe" stroke-width="1" fill="none">
+      <animateTransform attributeName="transform" type="rotate" values="0 170 35;-360 170 35" dur="25s" repeatCount="indefinite"/>
+    </path>
+  </g>
+  
+  <!-- Function showcase -->
+  <g transform="translate(50, 140)" opacity="0.8">
+    <text x="0" y="0" font-family="monospace" font-size="6" fill="#fff">Fork of Toolbox.ROM</text>
+    <text x="0" y="10" font-family="monospace" font-size="5" fill="#60a5fa">+ Direct ROM/RAM Access</text>
+    <text x="0" y="18" font-family="monospace" font-size="5" fill="#60a5fa">+ Search Functions</text>
+    <text x="0" y="26" font-family="monospace" font-size="5" fill="#60a5fa">+ Conversion Tools</text>
+  </g>
+  
+  <!-- Frozen box effect -->
+  <rect x="20" y="20" width="160" height="160" rx="10" fill="none" stroke="url(#frost)" stroke-width="2" opacity="0.3"/>
+  
+  <!-- Gradient definition for frost effect -->
+  <defs>
+    <linearGradient id="frost" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e0f2fe;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#7dd3fc;stop-opacity:0.5" />
+      <stop offset="100%" style="stop-color:#e0f2fe;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Text -->
+  <text x="100" y="185" font-family="monospace" font-size="16" fill="#fff" text-anchor="middle" font-weight="bold">HP-41 ICEBOX</text>
+  <text x="100" y="197" font-family="monospace" font-size="9" fill="#93c5fd" text-anchor="middle">Low-Level ROM Tools</text>
+</svg>
